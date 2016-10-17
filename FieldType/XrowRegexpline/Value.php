@@ -1,9 +1,9 @@
 <?php
 /**
- * File containing the XrowMetadata Value class
+ * File containing the XrowRegexpline Value class
  */
 
-namespace xrow\XrowMetadataBundle\FieldType\XrowMetadata;
+namespace xrow\XrowRegexplineBundle\FieldType\XrowRegexpline;
 
 use eZ\Publish\Core\FieldType\Value as BaseValue;
 

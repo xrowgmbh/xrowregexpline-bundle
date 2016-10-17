@@ -2,7 +2,7 @@
 /**
  * File containing the LegacyConverter class.
  */
-namespace xrow\XrowMetadataBundle\FieldType\XrowMetadata;
+namespace xrow\XrowRegexplineBundle\FieldType\XrowRegexpline;
 
 use eZ\Publish\Core\Persistence\Legacy\Content\FieldValue\Converter;
 use eZ\Publish\Core\Persistence\Legacy\Content\StorageFieldDefinition;
@@ -10,7 +10,7 @@ use eZ\Publish\Core\Persistence\Legacy\Content\StorageFieldValue;
 use eZ\Publish\SPI\Persistence\Content\FieldValue;
 use eZ\Publish\SPI\Persistence\Content\Type\FieldDefinition;
 
-class RegexplineConverter implements Converter
+class XrowRegexplineConverter implements Converter
 {
     public static function create()
     {

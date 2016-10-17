@@ -9,8 +9,8 @@ services:
         class: %xrow_regexpline_types.xrowregexpline.class%
         parent: ezpublish.fieldType
         tags:
-            - {name: ezpublish.fieldType, alias: xrowregexpline}
+            - {name: ezpublish.fieldType, alias: hmregexpline}
     xrow_regexpline_types.xrowregexpline.converter:
         class: %xrow_regexpline_types.xrowregexpline.converter.class%
         tags:
-            - {name: ezpublish.storageEngine.legacy.converter, alias: xrowregexpline}
+            - {name: ezpublish.storageEngine.legacy.converter, alias: hmregexpline}
