@@ -14,7 +14,7 @@ use eZ\Publish\SPI\Persistence\Content\Type\FieldDefinition;
 
 class XrowRegexplineConverter implements Converter
 {
-    const VALIDATOR_IDENTIFIER = 'RegexplineValidator';
+    const VALIDATOR_IDENTIFIER = 'XrowRegexplineValidator';
     
     /**
      * @var ConfigResolverInterface

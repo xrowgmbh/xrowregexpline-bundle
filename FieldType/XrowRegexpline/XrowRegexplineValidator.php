@@ -104,8 +104,7 @@ class XrowRegexplineValidator extends Validator
         if ( $value == '' ) {
             return $valid;
         }
-        
-        foreach ( $this->constraints[ 'regexp' ] as $index => $regexp )  {
+        foreach ( $this->constraints[ 'regexp' ] as $index => $regexp ) {
             $doNegate = isset( $this->constraints[ 'negates' ][ $index ] );
             $result = @preg_match( $regexp, $value );
         
@@ -124,7 +123,7 @@ class XrowRegexplineValidator extends Validator
             }
         }
         if ( !$valid && count( $this->errors ) == 0 ) {
-            $this->errors[] = 'Your input did not meet the requirements';
+            $this->errors[] = 'Your input did not meet the requirements.';
         }
         return $valid;
     }

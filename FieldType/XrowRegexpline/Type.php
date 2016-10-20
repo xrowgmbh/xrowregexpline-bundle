@@ -62,12 +62,10 @@ class Type extends FieldType
             return $errors;
         }
         $validatorConfiguration = $fieldDefinition->getValidatorConfiguration();
-        $constraints = isset($validatorConfiguration['XrowRegexplineValidator']) ?
-        $validatorConfiguration['XrowRegexplineValidator'] :
-        array();
+        $constraints = isset($validatorConfiguration['XrowRegexplineValidator'])?$validatorConfiguration['XrowRegexplineValidator']:array();
         $validator = new XrowRegexplineValidator();
         $validator->initializeWithConstraints($constraints);
-        if (!$validator->validate($fieldValue)) {
+        if (!$validator->validate($fieldValue->value)) {
             return $validator->getMessage();
         }
         return array();
@@ -119,7 +117,7 @@ class Type extends FieldType
      */
     public function isEmptyValue( SPIValue $value )
     {
-        return $value === "";
+        return $value->value === "";
     }
     
    /**
