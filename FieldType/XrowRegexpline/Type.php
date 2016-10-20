@@ -61,12 +61,14 @@ class Type extends FieldType
         if ($this->isEmptyValue($fieldValue)) {
             return $errors;
         }
-        $validatorConfiguration = $fieldDefinition->getValidatorConfiguration();
-        $constraints = isset($validatorConfiguration['XrowRegexplineValidator'])?$validatorConfiguration['XrowRegexplineValidator']:array();
-        $validator = new XrowRegexplineValidator();
-        $validator->initializeWithConstraints($constraints);
-        if (!$validator->validate($fieldValue->value)) {
-            return $validator->getMessage();
+        if ($fieldValue->switch === false) {
+            $validatorConfiguration = $fieldDefinition->getValidatorConfiguration();
+            $constraints = isset($validatorConfiguration['XrowRegexplineValidator'])?$validatorConfiguration['XrowRegexplineValidator']:array();
+            $validator = new XrowRegexplineValidator();
+            $validator->initializeWithConstraints($constraints);
+            if (!$validator->validate($fieldValue->value)) {
+                return $validator->getMessage();
+            }
         }
         return array();
     }
@@ -161,7 +163,7 @@ class Type extends FieldType
      */
     protected function getSortInfo( BaseValue $value )
     {
-        return $value;
+        return $value->value;
     }
     
     /**

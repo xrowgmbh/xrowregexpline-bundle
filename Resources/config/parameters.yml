@@ -1,3 +1,3 @@
 parameters:
-    xrowregexpline.GeneralSettings.RegularExpressions: /^.*/
+    xrowregexpline.GeneralSettings.RegularExpressions: /.*/
     xrowregexpline.GeneralSettings.ErrorMessages: You can use everything.

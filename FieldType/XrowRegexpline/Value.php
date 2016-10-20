@@ -18,15 +18,29 @@ class Value extends BaseValue
      * @var Mix
      */
     public $value;
+    /**
+     * Specifying Whether Validation Should Be Performed 
+     * 
+     * @var boolean
+     */
+    public $switch;
 
     /**
      * Construct a new Value object and initialize with $values
      *
-     * @param string[]|string $values
+     * @param array|string $values
      */
     public function __construct( $value = null )
     {
-        $this->value = $value;
+        if (is_array($value)) {
+            foreach ( (array)$value as $key => $item )
+            {
+                $this->$key = $item;
+            }
+        } else {
+            $this->value = $value;
+            $this->switch = false;
+        }
     }
 
     /**
