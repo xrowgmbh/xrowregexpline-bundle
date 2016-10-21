@@ -66,7 +66,7 @@ class Type extends FieldType
             $constraints = isset($validatorConfiguration['XrowRegexplineValidator'])?$validatorConfiguration['XrowRegexplineValidator']:array();
             $validator = new XrowRegexplineValidator();
             $validator->initializeWithConstraints($constraints);
-            if (!$validator->validate($fieldValue->value)) {
+            if (!$validator->validate($fieldValue)) {
                 return $validator->getMessage();
             }
         }

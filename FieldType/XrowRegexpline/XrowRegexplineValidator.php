@@ -99,14 +99,13 @@ class XrowRegexplineValidator extends Validator
     public function validate(BaseValue $value)
     {
         $valid = true;
-        
         // If there is no text it is always valid
-        if ( $value == '' ) {
+        if ( is_null($value->value) ) {
             return $valid;
         }
         foreach ( $this->constraints[ 'regexp' ] as $index => $regexp ) {
             $doNegate = isset( $this->constraints[ 'negates' ][ $index ] );
-            $result = @preg_match( $regexp, $value );
+            $result = @preg_match( $regexp, $value->value );
         
             if ( $doNegate === false ) {
                 $failure = ( $result === 0 );
